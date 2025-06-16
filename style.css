@@ -1,0 +1,224 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7fafc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+nav {
+  background: #e3f0ff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  position: relative;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+nav li {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border-bottom: 3px solid transparent;
+  font-weight: 500;
+  background: #1976d2;
+  color: #fff;
+  margin: 0 0.2rem;
+}
+nav li.active {
+  background: #1565c0;
+  color: #fff;
+  border-bottom: 3px solid #ffd54f;
+}
+nav li:hover {
+  background: #2196f3;
+  color: #fff;
+}
+nav .site-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin-right: 2.5rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 1.2rem 2.5rem;
+  border-radius: 10px;
+  transition: background 0.2s;
+  user-select: none;
+}
+nav .site-title:hover {
+  background: none;
+}
+nav .site-title-tab {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin-right: 2.5rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 1.2rem 2.5rem;
+  border-radius: 10px;
+  transition: background 0.2s;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: none;
+}
+nav .site-title-tab.active, nav .site-title-tab:hover {
+  background: #e3f0ff;
+  color: #1976d2;
+}
+nav li.active {
+  background: #d0eaff;
+  color: #1976d2;
+  border-bottom: 3px solid #1976d2;
+}
+nav li:hover {
+  background: #f0f8ff;
+}
+
+main {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+.content-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 2rem;
+  margin-top: 1rem;
+  min-height: 120px;
+  transition: box-shadow 0.2s;
+  border-left: 6px solid #90caf9;
+}
+.content-box:hover {
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.08);
+}
+#home-content {
+  border-left-color: #ffd54f;
+  background: #fffde7;
+}
+#about-content {
+  border-left-color: #81c784;
+  background: #f1f8e9;
+}
+#clubs-content {
+  border-left-color: #ba68c8;
+  background: #f3e5f5;
+}
+#hobbies-content {
+  border-left-color: #4fc3f7;
+  background: #e1f5fe;
+}
+.content-box:hover {
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.08);
+}
+h1 {
+  font-weight: 600;
+  color: #1976d2;
+  margin-bottom: 0.5rem;
+}
+.confetti {
+  position: fixed;
+  top: -20px;
+  width: 12px;
+  height: 18px;
+  border-radius: 3px;
+  z-index: 9999;
+  pointer-events: none;
+  animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+  to {
+    top: 100vh;
+    transform: rotate(360deg);
+  }
+}
+.falling-square {
+  position: fixed;
+  top: -40px;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  z-index: 9999;
+  pointer-events: none;
+  animation: square-fall linear forwards;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+@keyframes square-fall {
+  to {
+    top: 100vh;
+    transform: rotate(180deg);
+  }
+}
+.disco-bg {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222; /* fallback color */
+  position: relative;
+}
+.dancing-cat-gif {
+  max-width: 90vw;
+  max-height: 70vh;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+  background: #111;
+}
+#blank .content-box {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  min-height: 0;
+  margin: 0;
+}
+.confetti-flash-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-shadow: 0 0 20px #ff4081, 0 0 40px #40c4ff, 0 0 60px #ffd54f;
+  z-index: 10001;
+  animation: confetti-flash 0.25s infinite alternate, confetti-colors 1.2s infinite linear;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes confetti-flash {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
+@keyframes confetti-colors {
+  0% { color: #ff4081; text-shadow: 0 0 20px #ff4081, 0 0 40px #40c4ff, 0 0 60px #ffd54f; }
+  25% { color: #ffd54f; text-shadow: 0 0 20px #ffd54f, 0 0 40px #81c784, 0 0 60px #40c4ff; }
+  50% { color: #40c4ff; text-shadow: 0 0 20px #40c4ff, 0 0 40px #ffd54f, 0 0 60px #ff4081; }
+  75% { color: #81c784; text-shadow: 0 0 20px #81c784, 0 0 40px #ff4081, 0 0 60px #ffd54f; }
+  100% { color: #ff4081; text-shadow: 0 0 20px #ff4081, 0 0 40px #40c4ff, 0 0 60px #ffd54f; }
+}
