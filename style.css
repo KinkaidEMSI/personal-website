@@ -4,7 +4,7 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  position: relative;
+  cursor: url('https://cdn.pixabay.com/photo/2013/07/12/13/57/party-147622_1280.png') 16 16, auto;
 }
 
 nav {
@@ -86,6 +86,46 @@ nav li.active {
 }
 nav li:hover {
   background: #f0f8ff;
+}
+nav li[data-tab="home"] {
+  background: #ffd54f;
+  color: #1976d2;
+}
+nav li[data-tab="home"].active,
+nav li[data-tab="home"]:hover {
+  background: #fffde7;
+  color: #ffd54f;
+  border-bottom: 3px solid #ffd54f;
+}
+nav li[data-tab="about"] {
+  background: #81c784;
+  color: #fff;
+}
+nav li[data-tab="about"].active,
+nav li[data-tab="about"]:hover {
+  background: #f1f8e9;
+  color: #388e3c;
+  border-bottom: 3px solid #81c784;
+}
+nav li[data-tab="clubs"] {
+  background: #ba68c8;
+  color: #fff;
+}
+nav li[data-tab="clubs"].active,
+nav li[data-tab="clubs"]:hover {
+  background: #f3e5f5;
+  color: #6a1b9a;
+  border-bottom: 3px solid #ba68c8;
+}
+nav li[data-tab="hobbies"] {
+  background: #4fc3f7;
+  color: #fff;
+}
+nav li[data-tab="hobbies"].active,
+nav li[data-tab="hobbies"]:hover {
+  background: #e1f5fe;
+  color: #0288d1;
+  border-bottom: 3px solid #4fc3f7;
 }
 
 main {
@@ -180,12 +220,15 @@ h1 {
   background: #222; /* fallback color */
   position: relative;
 }
+.disco-cat-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
 .dancing-cat-gif {
-  max-width: 90vw;
-  max-height: 70vh;
-  border-radius: 18px;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.25);
-  background: #111;
+  max-width: 180px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.10);
 }
 #blank .content-box {
   background: transparent;
@@ -222,3 +265,97 @@ h1 {
   75% { color: #81c784; text-shadow: 0 0 20px #81c784, 0 0 40px #ff4081, 0 0 60px #ffd54f; }
   100% { color: #ff4081; text-shadow: 0 0 20px #ff4081, 0 0 40px #40c4ff, 0 0 60px #ffd54f; }
 }
+.about-badge {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.4em 1em;
+  border-radius: 20px;
+  background: #e3f0ff;
+  color: #1976d2;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  border: 2px solid #ffd54f;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s;
+}
+.about-badge.summer { background: #fffde7; color: #fbc02d; border-color: #ffe082; }
+.about-badge.hotpot { background: #fbe9e7; color: #d84315; border-color: #ffab91; }
+.about-badge.ratatouille { background: #ede7f6; color: #6a1b9a; border-color: #b39ddb; }
+.about-badge.dog { background: #e8f5e9; color: #388e3c; border-color: #a5d6a7; }
+.about-badge.tennis { background: #e1f5fe; color: #0288d1; border-color: #81d4fa; }
+.about-gif {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+  border: 2px solid #e3f0ff;
+  background: #fff;
+  vertical-align: middle;
+}
+.about-decor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  margin-top: 0.5rem;
+}
+.clubs-decor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  margin-top: 0.5rem;
+}
+.clubs-badge {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.4em 1em;
+  border-radius: 20px;
+  background: #f3e5f5;
+  color: #6a1b9a;
+  box-shadow: 0 2px 8px rgba(186, 104, 200, 0.08);
+  border: 2px solid #ba68c8;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s;
+}
+.clubs-badge.leader { background: #fff8e1; color: #fbc02d; border-color: #ffe082; }
+.clubs-badge.multi-sport { background: #e3f2fd; color: #1976d2; border-color: #90caf9; }
+.clubs-badge.mental-health { background: #e8f5e9; color: #388e3c; border-color: #a5d6a7; }
+.clubs-badge.njhs { background: #e1f5fe; color: #0288d1; border-color: #81d4fa; }
+.clubs-badge.leadership { background: #fff3e0; color: #ef6c00; border-color: #ffb74d; }
+.hobbies-decor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  margin-top: 0.5rem;
+}
+.hobbies-badge {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.4em 1em;
+  border-radius: 20px;
+  background: #e1f5fe;
+  color: #0288d1;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.08);
+  border: 2px solid #4fc3f7;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s;
+}
+.hobbies-badge.tennis { background: #fffde7; color: #fbc02d; border-color: #ffd54f; }
+.hobbies-badge.softball { background: #fbe9e7; color: #d84315; border-color: #ffab91; }
+.hobbies-badge.snowboarding { background: #e3f2fd; color: #1976d2; border-color: #90caf9; }
+.hobbies-badge.swimming { background: #e8f5e9; color: #388e3c; border-color: #a5d6a7; }
+.hobbies-badge.friends { background: #ede7f6; color: #6a1b9a; border-color: #b39ddb; }
+.hobbies-badge.family { background: #fff3e0; color: #ef6c00; border-color: #ffb74d; }
+.hobbies-badge.radiology { background: #f3e5f5; color: #6a1b9a; border-color: #ba68c8; }
+.hobbies-badge.business { background: #e1f5fe; color: #0288d1; border-color: #4fc3f7; }
+.hobbies-badge.stanford { background: #ffebee; color: #b71c1c; border-color: #ef9a9a; }
